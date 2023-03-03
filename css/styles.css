@@ -8,7 +8,9 @@
     --second-background-color: #F4F4FD; 
     --accent-color: #4D5AE5; 
     --button-color: #404BBF;
-    --black: #000
+    --black: #000;
+    --green: #31D0AA;
+    --lite-slate: #8e8f99;
     }
     
 html {
@@ -100,8 +102,7 @@ ul {list-style: none;}
     letter-spacing: 0.02em;
     
 }
- 
-   .nav_item:not(:last-child) {
+.nav_item:not(:last-child) {
     margin-right: 40px;
 }
 .contacts {
@@ -134,12 +135,15 @@ ul {list-style: none;}
 
 .nav_list .nav_link:hover,
 .nav_list .nav_link:focus {
-    color: var(--accent-color);
+    color: var(--button-color);
 }
 
 .contacts .contacts_link:hover,
 .contacts .contacts_link:focus {
-    color: var(--accent-color);
+    color: var(--button-color);
+}
+.nav_list .nav_link:active {
+    color: var(--button-color);
 }
 
 /*hero*/
@@ -351,6 +355,7 @@ margin-right: 24px;
     padding: 32px 16px;
     background-color: var(--white-color);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .team_title {
     margin: 0;
@@ -358,7 +363,7 @@ margin-right: 24px;
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 20px;
-     line-height: 1.2;
+    line-height: 1.2;
     text-align: center;
     letter-spacing: 0.02em;
 }
@@ -391,28 +396,29 @@ margin-right: 24px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(77, 90, 229, 1);
+    background-color: var(--accent-color);
 }
-.work .socialmedia_icon {
-    color: #F4F4FD;
+.team .socialmedia_icon {
+    fill: var(--second-background-color);
+}
+
+.socialmedia_link:hover, 
+.socialmedia_link:focus {
+background-color: var(--button-color);
 }
 
 /*Customers*/
-.customers {
+.customer {
     padding-top: 130px;
     padding-bottom: 120px;
 }
 .container .customers {
     padding: 0px 15px;
-    
 }
 
 .customers_list {
     display: flex;
-   
-}
-
-.customers_caption {
+ }.customers_caption {
     margin: 0;
     margin-bottom: 72px;
 
@@ -434,26 +440,38 @@ margin-right: 24px;
 margin-right: 24px;
 }
 .customers .logo {
-    border: 1px solid #8E8F99;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 88px;
     border-radius: 4px;
-   
+    flex-grow: 1;
 }
-       
+      
 .customers_link {
-    
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
     padding: 16px 32px 16px 32px;
-    border: 1px solid #8E8F99;
-  
+    border: 1px solid var(--lite-slate);
+
 }
+
 .customers_icon {
-    width: 100%;
-    height: 100%;
+    fill: var(--lite-slate);
 }
+
+.customers_link:hover,
+.customers_link:focus {
+border: 1px solid var(--button-color);
+ 
+}
+.customers_icon:hover,
+.customers_icon:focus {
+    fill: var(--button-color);
+}
+
 /*Footer*/
 .footer {
     background-color: var(--title-text-color);
@@ -537,6 +555,13 @@ footer .socialmedia_link {
     height: 100%;
     border-radius: 50%;
 }
+footer .socialmedia_icon {
+    fill: var(--second-background-color);
+}
+footer .socialmedia_link:hover, 
+footer .socialmedia_link:focus {
+    background-color: var(--green);
+}
 
 /*section search*/
 .filter {
@@ -583,11 +608,12 @@ footer .socialmedia_link {
     .button_secondary:hover,
     .button_secondary:focus {
     background-color: var(--button-color);
+    border: 1px solid var(--button-color);
     color: var(--white-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     }
 
 .portfolio_list {
-    
     padding: 0px;
     margin: 0;
     list-style: none;
@@ -597,20 +623,16 @@ footer .socialmedia_link {
     padding-left: 0px;
     row-gap: 48px;
     column-gap: 24px;
-    
 }  
-
 
 .portfolio_item {
     flex-basis: calc((100% - 48px) / 3);
-    
-  }
-
+}
 
 .portfolio_card {
-    border-right: 1px solid #E7E9FC;
-    border-bottom: 1px solid #E7E9FC;
-    border-left: 1px solid #E7E9FC;
+    border-right: 1px solid var(--accent-white-color);
+    border-bottom: 1px solid var(--accent-white-color);
+    border-left: 1px solid var(--accent-white-color);
     padding: 32px 0px;
     width: 360px;
     
@@ -618,6 +640,12 @@ footer .socialmedia_link {
 .portfolio_link {
     text-decoration: none;
 }
+.portfolio_item:hover,
+.portfolio_item:focus {
+    border: 0.5px solid #F4F4FD;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 
 .portfolio_title {
     margin: 0;
@@ -629,6 +657,7 @@ footer .socialmedia_link {
     line-height: 1.2;
     letter-spacing: 0.02em;
 }
+
 .portfolio_desc {
     margin: 0;
     padding-left: 16px;
